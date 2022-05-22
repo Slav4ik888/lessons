@@ -1,0 +1,34 @@
+.container {
+  margin: auto;
+  margin-top: 50px;
+  width: 350px;
+}
+.result-box {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.result-label {
+}
+.result-value {
+  color: rgb(25, 67, 102);
+  margin-left: 10px;
+}
+
+.add-input {
+  font-size: 1.5rem;
+  width: 217px;
+  text-align: right;
+}
+.some-value {
+  /* width: 100%; */
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.button {
+  width: 100px;
+  height: 40px;
+}
