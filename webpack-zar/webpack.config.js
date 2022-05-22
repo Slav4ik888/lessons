@@ -17,6 +17,10 @@ module.exports = {
     assetModuleFilename: 'images/[name]__[hash][ext][query]'
   },
 
+  resolve: {
+    extensions: [`*`, `.js`, `.jsx`, `.json`, `.css`, `.ts`, `.tsx`]
+  },
+  
   devServer: {
     port: 3000,
     open: false,
