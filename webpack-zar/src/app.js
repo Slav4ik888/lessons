@@ -13,7 +13,7 @@ export const App = () => {
       <h1 className={s.title}>Upload File!</h1>
       {/* <img src={logoSvg} alt="Logo" /> */}
       {/* <LogoSvg /> */}
-      <UploadFile multiple />
+      <UploadFile multiple onFinish={(files) => {console.log(`END:`, files);}}/>
       
     </div>
   )

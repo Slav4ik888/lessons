@@ -1,0 +1,1 @@
+export const normalizeFiles = (files) => Object.values(files).map(item => item.file);

@@ -20,7 +20,8 @@
 }
 
 .dropZoneIcon {
-  font-size: 60px;
+  font-size: 20px;
+  color:hsla(245, 27%, 26%, 0.3);
   line-height: 1;
   margin-bottom: 1rem;
 }
@@ -37,7 +38,7 @@
 }
 .previewFileContainer {
   background-color: #fff;
-  width: 400px;
+  width: 700px;
   min-height: 300px;
   border: 1px solid #919191;
   border-radius: 4px;
@@ -47,7 +48,10 @@
 .previewList {
   list-style: none;
 }
-
+.previewListItemContainer {
+  display: flex;
+  flex-direction: column;
+}
 .previewListItem {
   display: flex;
   justify-content: space-between;
@@ -56,6 +60,7 @@
   border: 1px solid #ccc;
   border-radius: 10px;
   overflow: hidden; 
+  margin-top: 4px;
   padding: 0 0.5rem;
 }
 .previewListItem:not(:last-child) {
@@ -79,6 +84,10 @@
   padding: 0.5rem;
   text-align: center;
   cursor: pointer;
+}
+
+.previewListItemImage {
+  width: 400px;
 }
 
 .previewListItem.isSimpleFile {
@@ -125,6 +134,6 @@
     transform: rotate(0);
   }
   to {
-    transform: rotate(-1turn);
+    transform: rotate(1turn);
   }
 }
