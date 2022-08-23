@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(
+      0deg,
+      rgba(17, 11, 12, 0.8) 8%,
+      rgba(112, 61, 43, 0.9) 52%,
+      rgba(17, 11, 12, 0.8)
+    ),
+    url("https://images.unsplash.com/photo-1474308371634-c715850e8d8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+.container {
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: url("https://images.unsplash.com/photo-1602800805409-f40cc632bb05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80");
+  background-size: cover;
+}
+.square {
+  width: 25px;
+  height: 25px;
+  border: 2px solid black;
+  background-color: rgb(68, 38, 27);
+  box-shadow: 0 0 2px #000;
+  transition: 1s ease;
+}
+.square:hover {
+  transition-duration: 0s;
+}

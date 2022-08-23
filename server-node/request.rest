@@ -1,0 +1,32 @@
+###
+POST http://localhost:3002/api/v1/login
+Content-Type: application/json
+
+{
+  "email"    : "korzan.va@mail.ru",
+  "password" : "123"
+}
+
+###
+GET http://localhost:3002/assets/logo.png
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1cm46YXVkaWVuY2U6dGVzdCIsImlzcyI6InVybjppc3N1ZXI6dGVzdCIsInN1YiI6ZmFsc2UsIm1heEFnZVNlYyI6MTQ0MDAsInRpbWVTa2V3U2VjIjoxNSwiaWF0IjoxNjU3MzcyNTExfQ.4EIEPBraOtjwF7H5gANsgX_iTN8CtLB2UdX_IYhlpxM
+
+###
+GET http://localhost:3002/api/v1/characters?name=Spider
+Accept: application/json
+
+###
+GET http://localhost:3002/api/v1/characters?name=Spider-Man
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1cm46YXVkaWVuY2U6dGVzdCIsImlzcyI6InVybjppc3N1ZXI6dGVzdCIsInN1YiI6ZmFsc2UsIm1heEFnZVNlYyI6MTQ0MDAsInRpbWVTa2V3U2VjIjoxNSwiaWF0IjoxNjU3MzcyNTExfQ.4EIEPBraOtjwF7H5gANsgX_iTN8CtLB2UdX_IYhlpxM
+
+###
+GET http://localhost:3002/api/v1/characters
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1cm46YXVkaWVuY2U6dGVzdCIsImlzcyI6InVybjppc3N1ZXI6dGVzdCIsInN1YiI6ZmFsc2UsIm1heEFnZVNlYyI6MTQ0MDAsInRpbWVTa2V3U2VjIjoxNSwiaWF0IjoxNjU3MzcyNTExfQ.4EIEPBraOtjwF7H5gANsgX_iTN8CtLB2UdX_IYhlpxM
+
+###
+GET http://localhost:3002
+Accept: application/json
+

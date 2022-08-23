@@ -6,8 +6,6 @@ const restart     = document.querySelector(`#restart`);
 const addInput    = document.querySelector(`#add-input`);
 const someValue   = document.querySelector(`#some-value`);
 
-// =========     STORE    ========= //
-const store = createStore(updateStore, 0);
 
 // ========= ACTION TYPES ========= //
 const INC_COUNT      = `INC_COUNT`;
@@ -17,40 +15,39 @@ const ADD_SOME_VALUE = `ADD_SOME_VALUE`;
 
 // =========  LISTENERS  ========= //
 
-minus.addEventListener(`click`, () => {
-  store.dispatch({ type: INC_COUNT });
-  updateHeader(store.getState());
-});
-plus.addEventListener(`click`, () => {
-  store.dispatch({ type: DEC_COUNT });
-  updateHeader(store.getState());
-});
-restart.addEventListener(`click`, () => {
-  store.dispatch({ type: RESTART });
-  updateHeader(store.getState());
-});
+minus.addEventListener(`click`, () => store.dispatch({ type: INC_COUNT }));
+plus.addEventListener(`click`, () => store.dispatch({ type: DEC_COUNT }));
+restart.addEventListener(`click`, () => store.dispatch({ type: RESTART })) ;
+
 someValue.addEventListener(`click`, () => {
   const value = +addInput.value;
   store.dispatch({ type: ADD_SOME_VALUE, payload: value });
   addInput.value = null;
-  updateHeader(store.getState());
 });
 
 // ========= FUNCTIONS ========= //
 
-function createStore(reducer, initialState) {
-  return {
-    _state: initialState,
+class CreateStore {
+  constructor(reducer, initialState) {
+    this._state = initialState;
+    this._reducer = reducer;
+    this._subscribers = [];
+  }
 
-    dispatch(action) {
-      this._state = reducer(this._state, action);
-    },
+  dispatch(action) {
+    this._state = this._reducer(this._state, action);
+    this._subscribers.forEach(cb => cb());
+  }
 
-    getState() {
-      return this._state;
-    }
+  getState() {
+    return this._state;
+  }
+
+  subscribe(callback) {
+    this._subscribers.push(callback);
   }
 }
+
 
 function updateStore(state, action) {
   switch (action.type) {
@@ -72,8 +69,9 @@ function updateStore(state, action) {
 
 
 function updateHeader(count) {
-  resultValue.textContent = count.toString();
+  resultValue.textContent = count?.toString();
 }
 
 // ========= START ========= //
-updateHeader();
+const store = new CreateStore(updateStore, 0);
+store.subscribe(() => updateHeader(store.getState()));

@@ -4,14 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon node .",
+    "server": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Vyacheslav",
   "license": "ISC",
   "dependencies": {
-    "@hapi/hapi": "^20.2.2"
+    "@hapi/boom": "^10.0.0",
+    "@hapi/hapi": "^20.2.2",
+    "@hapi/inert": "^6.0.5",
+    "@hapi/jwt": "^2.1.1",
+    "dotenv": "^16.0.1",
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
     "nodemon": "2.0.16"

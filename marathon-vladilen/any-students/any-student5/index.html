@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:500,600,800" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Aim Training | Day 5</title>
+</head>
+
+<body>
+  <div class="screen screen_state_active" data-screen="main">
+    <h1 class="title">Aim Training</h1>
+    <button class="button" id="start-game-btn">start game</button>
+  </div>
+  <div class="screen" data-screen="time">
+    <h2 class="subtitle">Select time</h2>
+    <div class="flex">
+      <button class="button button_for_time" data-time="10">10 s</button>
+      <button class="button button_for_time" data-time="30">30 s</button>
+      <button class="button button_for_time" data-time="60">60 s</button>
+      <button class="button button_for_time" data-time="120">120 s</button>
+    </div>
+  </div>
+  <div class="screen" data-screen="play">
+    <div class="game">
+      <div class="game__stats">
+        <h3 class="game__stat">
+          Time left:
+          <span class="game__stat-value" id="time-left">00:00</span>
+        </h3>
+        <h3 class="game__stat">
+          Score: <span class="game__stat-value" id="score">0</span>
+        </h3>
+      </div>
+      <div class="game__board board" id="board"></div>
+    </div>
+  </div>
+  <div class="screen" data-screen="results">
+    <h3 class="wrapped-text subtitle">
+      Score: <span id="result-score">0</span>
+    </h3>
+    <button class="button" id="replay-btn">replay</button>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>
