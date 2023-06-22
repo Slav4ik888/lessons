@@ -1,59 +1,26 @@
-const
-  http = require('http');
-  fs = require('fs');
+const http = require('http');
 
-const delay = (ms) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve()
-    }, ms);
-  })
-}
+let requestCounts = 0;
 
-const readFile = (path) => {
-  return new Promise((resolve, reject) => {
-    fs.readFile(path, (err, data) => {
-      if (err) reject(err);
-      else resolve(data);
-    });
-  })
-}
 
-const server = http.createServer(async (req, res) => {
+const server = http.createServer((req, res) => {
+  requestCounts++;
+
   switch (req.url) {
-    case '/home': {
-      console.log('/home');
-      try {
-        const data = await readFile('src/pages/home.html');
-        if (data) {
-          res.write(data);
-          res.end();
-        }
-      }
-      catch (e) {
-        res.write('Some error');
-        res.end();
-      }
-      
+    case '/students':
+      res.write('Students!');
       break;
-    }
-      
-    case '/about': {
-      console.log('/about');
-
-      await delay(3000);
-      res.write('About page...');
-      res.end();
-
+    
+    case '/':
+    case '/courses':
+      res.write('Courses!');
       break;
-    }
-      
-    default: {
-      console.log('404 not found');
-      res.write('404 not found');
-      res.end();
-    }
+    
+    default: res.write('404 not found');
   }
-})
 
-server.listen(8585, () => console.log(`Listening on port 8585!`));
+  res.write(` requestCounts: ${requestCounts}`);
+  res.end();
+});
+
+server.listen(3003, () => console.log(`Listening on port 3003!`));
