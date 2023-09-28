@@ -1,0 +1,15 @@
+html {
+  font-family: sans-serif;
+}
+
+canvas {
+  background: #aea5a5;
+  border: 1px dashed;
+}
+
+a {
+  display: inline-block;
+  background: #69c;
+  color: #fff;
+  padding: 5px 10px;
+}
