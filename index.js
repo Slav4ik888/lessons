@@ -1,1 +1,1 @@
-// git add . && git commit -m "ad-block" && git push -u origin master
+// git add . && git commit -m "add-ts-lessons" && git push -u origin master

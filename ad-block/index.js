@@ -2,6 +2,7 @@
 const
   // Английский
   myefe_ru = ['#msui-sticky-ad', '#ogdac-block-id-8406-64f6942b058bc', '#ogdac-block-id-8400-64f6942b052fa'],
+  russkiiyazyk = ['#block-2', '.vads-positioner', '#RUS_ATA_336', '#via_102417_3320', '.google-auto-placed', '#RUS_SBL_300c', '#via_102417_3320', '.adsbygoogle'],
   unkn = ['.glory'],
   xvideos = ['#video-ad'];
 
@@ -31,17 +32,34 @@ const rui = () => {
   }
 };
 
+/***************************************************
+ * Remove all selectors dublicates
+ ***************************************************/
+const rasd = (selector) => {
+  const all = document.querySelectorAll(selector)
+
+  if (all) {
+    for (const item of all) {
+      console.log('item: ', item);
+      item.remove()
+    }
+  }
+};
+
 /****************************************************
  * Remove all selectors & ukr
  ***************************************************/
 const ras = () => {
-  rass(myefe_ru);
-  rass(unkn);
-  rass(xvideos);
+  rasd(myefe_ru);
+  rasd(unkn);
+  rasd(xvideos);
+  rasd(russkiiyazyk);
   rui();
 };
 
-// ras();
+ras();
+
+
 
 /***************************************************
  * Remove all iframes
@@ -90,65 +108,6 @@ const isClassNameContains = (selector, className) => {
   return selector.classList.contains(className);
 };
 
-/**
- * Test, don`t work
- * Open link in new window & execute script
- * @param {string} url
- */
-function openAndPush(url) {
-  const win = window.open(url, '_blank');
-  win.func = function () {
-    console.log('ЗАПУСКАЕМ ФУНКЦИЮ');
-    autoClickTorrentHref();
-  };
-  setTimeout(function () {
-    console.log('ФУНКЦИЯ В СЕТТАЙМАУТЕ');
-    win.func();
-  }, 1000);
-}
-
-/***************************************************
- * Автоматически нажать на ссылку для скачивания 
- ***************************************************/
-const execFuncInAllLinksBySelector = (func, selector) => {
-  const a = document.querySelectorAll(selector);
-  if (!a) return
-  
-  for (const item of a) {
-    func(item);
-  }
-};
-
-// Click link if includes 'Скачать'
-const autoClickTorrentHref = () => {
-  const clickIfTorrentHref = (link) => {
-    if (isTextContent(link, 'Скачать')) {
-      link.click();
-    }
-  };
-
-  execFuncInAllLinksBySelector(clickIfTorrentHref, '.btn--download');
-};
-
-// -------------------------------------------------------
-
-const clickTorrentDownloadLink = () => {
-  const func = (link) => {
-    if (isClassNameContains(link, 'btn')) {
-      if (isTextContent(link, 'Скачать')) {
-        // link.click();
-        if (isClassNameContains(link, '.btn--download')) link.click()
-        else window.open(link.href, '_blank');
-      }
-    }
-  };
-  
-  execFuncInAllLinksBySelector(func, 'a');
-};
-
-clickTorrentDownloadLink();
-
-// -------------------------------------------------------
 
 
 
@@ -162,5 +121,3 @@ clickTorrentDownloadLink();
 //     console.log(item);
 //   }
 // }
-
-// 

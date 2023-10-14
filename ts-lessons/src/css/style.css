@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "Manropelight";
+  src: url("../fonts/Manropelight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+  margin: 0;
+  background-color: #b4d5e8; /* #0d5b89; */
+}
+
+/* ГЛАВНАЯ СТРАНИЦА - для App */
+.container {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+a,
+button {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin: 7px 0;
+}
+
+li {
+  margin-left: 32px;
+}
+
+.btn {
+  margin: 40px 0;
+  padding: 20px;
+  color: #ffffff;
+  background-color: rgb(145, 77, 165);
+  cursor: pointer;
+  transition: 0.5;
+}
+.btn:hover {
+  background-color: rgb(125, 59, 145);
+}
+
+.card {
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(192, 192, 192);
+}
+.card-content {
+  padding: 10px;
+  border: 1px dotted #b4d5e8;
+}
+.card-title {
+  color: rgb(145, 77, 165);
+}
