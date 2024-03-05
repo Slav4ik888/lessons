@@ -30,6 +30,7 @@ body {
 }
 
 .chars-panel-title {
+  position: relative;
   font-size: 20px;
   margin-bottom: 20px;
 }
@@ -96,4 +97,11 @@ body {
   color: #d9d9d9;
   overflow: scroll;
 }
-  
+
+.words {
+  position: absolute;
+  right: -27px;
+  top: -6px;
+  font-size: 15px;
+  color: #ccbf00;
+}

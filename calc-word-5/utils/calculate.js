@@ -4,7 +4,9 @@ import { getRegMatch } from './regexp.js';
 /**
  * Место куда вставлять подходящие слова
  */
-const words = document.getElementById("words");
+const
+  words = document.getElementById('words'),
+  wordsLength = document.querySelector('.words');
 
 
 /**
@@ -62,9 +64,11 @@ export function calculate(selectedChars) {
   const
     regexp    = new RegExp(getRegMatch(selectedChars.match)),
     presented = selectedChars.present.split(''),
-    absented  = selectedChars.absent.split('');
+    absented  = selectedChars.absent.split(''),
 
-  words.textContent = data
-    .filter(word => validate(word, regexp, presented, absented))
-    .join(', ');
+  allTextArr = data.filter(word => validate(word, regexp, presented, absented));
+    
+  words.textContent = allTextArr.join(', ');
+
+  wordsLength.textContent = allTextArr.length;
 }
