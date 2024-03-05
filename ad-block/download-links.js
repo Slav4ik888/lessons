@@ -50,6 +50,8 @@ const isClassNameContains = (selector, className) => {
 /***************************************************
  * Автоматически нажать на ссылку для скачивания 
  ***************************************************/
+
+/** Запустить функцию для каждого попавшегося селектора */
 const execFuncInAllLinksBySelector = (func, selector) => {
   const a = document.querySelectorAll(selector);
   if (!a) return
@@ -59,7 +61,7 @@ const execFuncInAllLinksBySelector = (func, selector) => {
   }
 };
 
-// Click link if includes 'Скачать'
+/** Click link if includes 'Скачать' */
 const autoClickTorrentHref = () => {
   const clickIfTorrentHref = (link) => {
     if (isTextContent(link, 'Скачать')) {
@@ -72,6 +74,10 @@ const autoClickTorrentHref = () => {
 
 // -------------------------------------------------------
 
+/**
+ * Если а содержит класс .btn--download => кликаем
+ * Иначе открываем в новом окне
+ */
 const clickTorrentDownloadLink = () => {
   const func = (link) => {
     if (isClassNameContains(link, 'btn')) {
@@ -86,4 +92,4 @@ const clickTorrentDownloadLink = () => {
   execFuncInAllLinksBySelector(func, 'a');
 };
 
-// clickTorrentDownloadLink();
+clickTorrentDownloadLink();

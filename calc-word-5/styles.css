@@ -1,0 +1,99 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Roboto-Medium', 'Roboto', sans-serif;
+  padding: 40px;
+  background: #666;
+}
+
+.chars-container {
+  width: 600px;
+}
+
+
+/* CHARS */
+
+.chars-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.chars-panel-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.char-input {
+  font-size: 70px;
+  border: 1px solid #404040;
+  box-shadow: 0px 0px 10px #888888;
+  background: #404040;
+}
+
+.char-input:focus-visible {
+  outline:none;
+}
+
+/* MATCHES */
+
+.match-chars-boxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.match-char-box {
+  display: flex;
+  justify-content:center;
+  color: #ccbf00;
+  width: 17%;
+  height: 80px;
+  /* margin: 0 10px; */
+}
+
+.match-char-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* FOR PRESENT & ABSENT */
+.once-chars-boxes {
+  width: 100%;
+  min-height: 40px;
+  max-height: 200px;
+}
+
+/* PRESENT */
+.present-char-input {
+  width: 100%;
+  color: #d9d9d9;
+}
+
+/* ABSENT */
+.absent-char-input {
+  width: 100%;
+  color: #686868;
+}
+
+/* RESULT */
+.result {
+  font-size: 20px;
+  color: #d9d9d9;
+  overflow: scroll;
+}
+  

@@ -1,0 +1,35 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  background-color: #8BC34A;
+  border-radius: 20px;
+}
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.input-box {
+  display: flex;
+  margin-top: 10px;
+}
+
+.input {
+  width: 400px;
+}
+
+.button {
+  width: 100px;
+  margin-left: 20px;
+}

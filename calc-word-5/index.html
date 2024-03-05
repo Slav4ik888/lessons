@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Word 5 length</title>
+</head>
+
+<body>
+  <div class="chars-container">
+    <div class="chars-panel">
+      <div class="chars-panel-title">Укажите известные буквы в точном местоположении</div>
+      <div class="match-chars-boxes">
+        <div class="match-char-box">
+          <div id="match-char-1" contenteditable="true" tabindex="1" class="match-char-input char-input"></div>
+        </div>
+        <div class="match-char-box">
+          <div id="match-char-2" contenteditable="true" tabindex="2" class="match-char-input char-input"></div>
+        </div>
+        <div class="match-char-box">
+          <div id="match-char-3" contenteditable="true" tabindex="3" class="match-char-input char-input"></div>
+        </div>
+        <div class="match-char-box">
+          <div id="match-char-4" contenteditable="true" tabindex="4" class="match-char-input char-input"></div>
+        </div>
+        <div class="match-char-box">
+          <div id="match-char-5" contenteditable="true" tabindex="5" class="match-char-input char-input"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chars-panel">
+      <div class="chars-panel-title">Эти буквы есть в слове, но не известно в каком месте</div>
+      <div id="present-chars" contenteditable="true" spellcheck="false" tabindex="6" class="once-chars-boxes present-char-input char-input"></div>
+    </div>
+
+    <div class="chars-panel">
+      <div class="chars-panel-title">Этих букв нет в слове</div>
+      <div id="absent-chars" contenteditable="true" spellcheck="false" tabindex="7" class="once-chars-boxes absent-char-input char-input"></div>
+    </div>
+
+    <div class="chars-panel">
+      <div class="chars-panel-title">Подходящие слова</div>
+      <div id="words" spellcheck="false" class="once-chars-boxes result char-input"></div>
+    </div>
+
+  </div>
+
+  <script type="module" src="index.js"></script>
+</body>
+</html>

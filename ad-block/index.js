@@ -4,7 +4,11 @@ const
   myefe_ru = ['#msui-sticky-ad', '#ogdac-block-id-8406-64f6942b058bc', '#ogdac-block-id-8400-64f6942b052fa'],
   russkiiyazyk = ['#block-2', '.vads-positioner', '#RUS_ATA_336', '#via_102417_3320', '.google-auto-placed', '#RUS_SBL_300c', '#via_102417_3320', '.adsbygoogle'],
   unkn = ['.glory'],
-  xvideos = ['#video-ad'];
+  dzen = ['.article-right-ad-block__sticky'],
+  xvideos = ['#video-ad', '#ad-footer', '.remove-ads'],
+  gitar = ['.ab', '#wrap_6334'],
+  errInGoogleSheet = ['.docs-butterbar-wrap', '.modal-dialog'];
+
 
 /****************************************************
  * Remove all selected selectors
@@ -53,7 +57,10 @@ const ras = () => {
   rasd(myefe_ru);
   rasd(unkn);
   rasd(xvideos);
+  rasd(dzen);
   rasd(russkiiyazyk);
+  rasd(gitar);
+  rasd(errInGoogleSheet);
   rui();
 };
 
@@ -121,3 +128,9 @@ const isClassNameContains = (selector, className) => {
 //     console.log(item);
 //   }
 // }
+
+// GOOGLE SHEETS
+['.docs-butterbar-wrap', '.modal-dialog', '.modal-dialog-bg'].forEach(selector => {
+  const elem = document.querySelector(selector);
+  if (elem) elem.remove();
+});
