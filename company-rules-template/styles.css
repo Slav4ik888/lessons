@@ -1,0 +1,334 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: transparent;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.app {
+  background-color: transparent;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.app-inner {
+  height: 100%;
+}
+
+::selection {
+  background: rgb(74 79 84 / 28%);
+}
+*, :focus {
+  outline: 0;
+}
+
+/* THEME */
+
+.light-theme {
+  color: rgb(55, 53, 47);
+  fill: currentcolor;
+  line-height: 1.5;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  -webkit-font-smoothing: auto;
+  background-color: white;
+}
+
+
+/* ----------------- */
+/* --- CONTAINER --- */
+/* ----------------- */
+
+.container {
+  position: relative;
+  display: flex;
+  flex: 1 1 0%;
+  background: white;
+  cursor: text;
+  width: 100vw;
+  height: 100%;
+}
+
+/* SIDEBAR */
+.sidebar-container {
+  flex-grow: 0;
+  flex-shrink: 0;
+  pointer-events: none;
+  position: relative;
+  z-index: 111;
+  background: rgb(251, 251, 250);
+  transition: width 270ms ease 0s;
+  box-shadow: rgba(0, 0, 0, 0.024) -1px 0px 0px 0px inset;
+  width: 252px;
+  cursor: default;
+}
+
+.sidebar-block {
+  color: rgba(25, 23, 17, 0.6);
+  font-weight: 500;
+  height: 100%;
+}
+
+.sidebar-absolute {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 0px;
+  overflow: visible;
+  z-index: 9;
+  pointer-events: none;
+}
+
+.sidebar-main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  pointer-events: auto;
+  visibility: visible;
+  width: 252px;
+  opacity: 1;
+  transition-property: width, opacity, transform;
+  transition-duration: 270ms;
+  transition-timing-function: ease;
+}
+
+.sidebar-main-block {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.sidebar-main-block-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 100%;
+}
+
+.sidebar-header {
+  display: block;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+/* Switcher */
+.sidebar-switcher {
+  user-select: none;
+  transition: background 20ms ease-in 0s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  min-width: 0px;
+  height: 37px;
+  width: calc(100% - 8px);
+  margin: 4px 4px 0px;
+  border-radius: 4px;
+  padding: 0px;
+}
+
+.sidebar-switcher:hover {
+  background: rgb(55, 53, 47, 0.08);
+}
+
+.switcher-logo-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 14px;
+  min-height: 27px;
+  overflow: hidden;
+  padding: 2px 10px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-left: 0px;
+}
+
+/* Switcher Icon */
+.switcher-logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border-radius: 4px;
+  color: rgba(55, 53, 47, 0.65);
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+}
+
+.switcher-logo-icon-container {
+  position: relative;
+}
+
+.switcher-logo-icon-container-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  width: 22px;
+  border-radius: 0.25em;
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: rgb(55, 53, 47);
+  font-weight: 500;
+}
+
+.switcher-logo-icon-container-block-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25em;
+  width: 20px;
+  height: 20px;
+  background: rgba(55, 53, 47, 0.09);
+  color: rgba(55, 53, 47, 0.65);
+  text-transform: uppercase;
+}
+
+.switcher-logo-icon-container-block-img-wrap {
+  line-height: 1;
+  font-size: 13.431px;
+  height: 13.431px;
+}
+
+/* Switcher Logo-text */
+.switcher-logo-text {
+  white-space: nowrap;
+  min-width: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.switcher-logo-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.switcher-logo-text-container-text {
+  display: flex;
+  flex-direction: column;
+  margin-right: 6px;
+  margin-top: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.switcher-logo-text-container-text-title {
+  color: rgb(55, 53, 47);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.switcher-logo-text-container-text-subtitle {
+  color: rgba(55, 53, 47, 0.65);
+  font-size: 11px;
+  line-height: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Switcher-logo Icon */
+.switcher-logo-container-icon {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  fill: rgba(55, 53, 47, 0.45);
+}
+
+.switcher-logo-container-icon-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: inherit;
+  flex-shrink: 0;
+}
+
+/* Fade in */
+.switcher-fadein {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: auto;
+  margin-right: 12px;
+}
+
+.switcher-fadein-container {
+  user-select: none;
+  transition-behavior: normal;
+  transition-delay: 0s;
+  /* cursor: default; */
+  opacity: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 4px;
+  height: 24px;
+  width: 24px;
+  padding: 0px;
+  position: relative;
+  margin-left: 10px;
+}
+
+.switcher-fadein-container:hover {
+  background: rgb(55, 53, 47, 0.08);
+}
+
+.switcher-fadein-container-svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+  fill: rgba(55, 53, 47, 0.45);
+  flex-shrink: 0;
+}
+
+/* END SWITCHER */
+
+/* ----------------- */
+/* ------ PAGE ----- */
+/* ----------------- */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ----------------- */
+/* ---- OVERLAY ---- */
+/* ----------------- */
+
+.overlay-container {
+  position: fixed;
+  inset: 0px;
+  z-index: 999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.overlay {
+  position: relative;
+  z-index: 0;
+}

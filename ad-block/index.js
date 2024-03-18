@@ -134,3 +134,9 @@ const isClassNameContains = (selector, className) => {
   const elem = document.querySelector(selector);
   if (elem) elem.remove();
 });
+
+// KONTUR
+['.c-kontur__unpayment'].forEach(selector => {
+  const elem = document.querySelector(selector);
+  if (elem) elem.remove();
+});
