@@ -140,3 +140,9 @@ const isClassNameContains = (selector, className) => {
   const elem = document.querySelector(selector);
   if (elem) elem.remove();
 });
+
+// HTML
+['#block-werbe-horizontal-120', '#block-werbe-vertikal-240'].forEach(selector => {
+  const elem = document.querySelector(selector);
+  if (elem) elem.remove();
+});

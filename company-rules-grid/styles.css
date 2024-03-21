@@ -1,0 +1,92 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 2vw;
+}
+
+body {
+  position: relative;
+  background-color: transparent;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app {
+  position: relative;
+  background-color: transparent;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-inner {
+  height: 100%;
+}
+
+::selection {
+  background: rgb(74 79 84 / 28%);
+}
+
+*,
+:focus {
+  outline: 0;
+}
+
+/* GRID */
+.layout {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "nav article ads"
+    "footer footer footer";
+  /* grid-template-rows: repeat(5, 1fr); */
+  grid-template-rows: [row-start] 3rem [row-content-start] 1fr [row-content-end] 8rem [row-end];
+  grid-template-columns: [col-start] 1fr [content-start] 4fr [content-end] 1fr [col-end];
+  grid-gap: 1rem; /* интервал между элементами сетки */
+  height: 100vh;
+}
+
+.layout .layout-item {
+  font-size: 2rem;
+  padding: .5rem;
+  background: gold;
+  text-align: center;
+}
+
+#layout-header {
+  grid-area: header;
+}
+
+#layout-nav {
+  grid-area: nav;
+}
+
+#layout-article {
+  grid-area: article;
+}
+
+#layout-ads {
+  grid-area: ads;
+}
+
+#layout-footer {
+  /* grid-area: footer; */
+  grid-area: row-content-end / col-start / row-end / col-end;
+}
+
+/* Макет для маленьких устройств/экранов */
+@media all and (max-width: 575px) {
+  .layout {
+    grid-template-areas:
+      "header"
+      "article"
+      "ads"
+      "nav"
+      "footer";
+    grid-template-rows: 80px 1fr 70px 1fr 70px;
+    grid-template-columns: 1fr;
+  }
+}

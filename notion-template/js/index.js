@@ -5,9 +5,9 @@ const
   sidebarMainFirstChild = sidebarMainContainer.firstElementChild, // Для показа скруглённых краёв при свёрнутом меню
   sidebarMainBlock      = document.querySelector('.sidebar-main-block'),
   switcherFadeinIcon    = document.querySelector('.switcher-fadein-container'),
-  headerIcons           = document.querySelector('.header-switcher-icons-container'),
-  headerHamburgerIcon   = document.querySelector('.header-switcher-icon-hamburger'),
-  headerOpenIcon        = document.querySelector('.header-switcher-icon-open');
+  topbarIcons           = document.querySelector('.topbar-switcher-icons-container'),
+  topbarHamburgerIcon   = document.querySelector('.topbar-switcher-icon-hamburger'),
+  topbarOpenIcon        = document.querySelector('.topbar-switcher-icon-open');
 
 
 let
@@ -45,24 +45,24 @@ document.onmousemove = (e) => {
   }
 };
 
-// При наведении мыши на headerHamburgerIcon
-headerHamburgerIcon.onmouseenter = (e) => {
-  headerHamburgerIcon.style.opacity = 0;
+// При наведении мыши на topbarHamburgerIcon
+topbarHamburgerIcon.onmouseenter = (e) => {
+  topbarHamburgerIcon.style.opacity = 0;
 
-  headerOpenIcon.style.opacity    = 1;
-  headerOpenIcon.style.background = 'rgba(55, 53, 47, 0.08)';
-  headerOpenIcon.style.display    = 'inline-flex';
+  topbarOpenIcon.style.opacity    = 1;
+  topbarOpenIcon.style.background = 'rgba(55, 53, 47, 0.08)';
+  topbarOpenIcon.style.display    = 'inline-flex';
 };
 
-headerOpenIcon.onmouseleave = (e) => {
-  headerHamburgerIcon.style.opacity = 1;
+topbarOpenIcon.onmouseleave = (e) => {
+  topbarHamburgerIcon.style.opacity = 1;
 
-  headerOpenIcon.style.opacity = 0;
-  headerOpenIcon.style.display = 'none';
+  topbarOpenIcon.style.opacity = 0;
+  topbarOpenIcon.style.display = 'none';
 };
 
 // Open SideBar
-headerOpenIcon.addEventListener('click', (e) => {
+topbarOpenIcon.addEventListener('click', (e) => {
   handlerShowSideBarContainer(true);
 });
 
@@ -89,7 +89,7 @@ function handlerCloseSideBarContainer() {
   sidebarMainBlock     .style.maxHeight = 'calc(100vh - 120px)';
   sidebarMainFirstChild.style.display   = 'block';
   switcherFadeinIcon   .style.display   = 'none';
-  headerIcons          .style.display   = 'block';
+  topbarIcons          .style.display   = 'block';
 };
 
 // Временно показываем SideBar
@@ -112,6 +112,6 @@ function handlerShowSideBarContainer(isSidebarOpen) {
   sidebarMainBlock     .style.maxHeight = '100%';
   sidebarMainFirstChild.style.display   = 'none';
   switcherFadeinIcon   .style.display   = 'inline-flex';
-  headerIcons          .style.display   = 'none';
+  topbarIcons          .style.display   = 'none';
 
 };
