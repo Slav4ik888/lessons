@@ -146,3 +146,10 @@ const isClassNameContains = (selector, className) => {
   const elem = document.querySelector(selector);
   if (elem) elem.remove();
 });
+
+
+// HABR
+['.tm-layout-sidebar__ads', '.tm-layout-sidebar', '.tm-page__sidebar', '.tm-adfox-banner__container'].forEach(selector => {
+  const elem = document.querySelector(selector);
+  if (elem) elem.remove();
+});

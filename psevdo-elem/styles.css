@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background: #ccd3d7;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid green;
+  padding: 1rem 2rem 2rem;
+  width: 600px;
+}
+
+.item {
+  border: 1px solid green;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+/* first-letter */
+
+.first-letter::first-letter {
+  color: red;
+  font-weight: 900;
+  font-size: 130%;
+}
+
+/* before */
+
+.before::before {
+  content: "♥ 777 ♥ ";
+  color: red;
+}
+
+/* after */
+.after::after {
+  content: " ♥ 777 ♥";
+  color: red;
+}
+
+/* before & after */
+.before-after::before {
+  content: open-quote;
+  color: red;
+  font-weight: 900;
+  font-size: 130%;
+}
+
+.before-after::after {
+  content: close-quote;
+  color: red;
+  font-weight: 900;
+  font-size: 130%;
+}
+
+/* content url() */
+.content-url::before {
+  content: url("https://mozorg.cdn.mozilla.net/media/img/favicon.ico") " MOZILLA: ";
+  font: x-small Arial, sans-serif;
+  color: gray;
+}
+
+
+/* blockquote */
+:root {
+  --quote-width: 2rem;
+}
+
+blockquote {
+  position: relative;
+}
+
+blockquote:hover {
+  transition: all 1000ms;
+  -o-transition: all 1000ms;
+  -moz-transition: all 1000ms;
+  -webkit-transition: all 1000ms;
+}
+
+blockquote:hover::before {
+  position: absolute;
+  top: calc(50% - (var(--quote-width) / 2));
+  left: calc((var(--quote-width) + 8px) * (-1));
+  content: open-quote;
+  text-align: center;
+  font-size: var(--quote-width);
+  line-height: var(--quote-width) * 2;
+  color: #fff;
+  background: #ddd;
+  border-radius: 50%;
+
+  /** define it as a block element **/
+  display: block;
+  height: var(--quote-width);
+  width: var(--quote-width);
+}
+
+blockquote:hover::after {
+  position: absolute;
+  top: calc(50% - (var(--quote-width) / 2));
+  right: calc((var(--quote-width) + 8px) * (-1));
+  content: close-quote;
+  text-align: center;
+  font-size: var(--quote-width);
+  line-height: var(--quote-width) * 2;
+  color: #fff;
+  background: #ddd;
+  border-radius: 50%;
+
+  /** define it as a block element **/
+  display: block;
+  height: var(--quote-width);
+  width: var(--quote-width);
+}
+
+/* stackone */
+
+:root {
+  --stackone-width: 100%;
+}
+
+.stackone {
+  position: relative;
+  width: var(--stackone-width);
+  height: max-content;
+  border: 6px solid #fff;
+  margin: 2rem 0;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.stackone img {
+  width: 100%;
+}
+
+.stackone:before {
+  position: absolute;
+  top: 0px;
+  left: -10px;
+  z-index: -1;
+
+  content: "";
+  height: var(--stackone-width);
+  width: var(--stackone-width);
+  background: #eff4de;
+  border: 6px solid #fff;
+
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+}
+
+.stackone:after {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  z-index: -1;
+
+  content: "";
+  height: var(--stackone-width);
+  width: var(--stackone-width);
+  background: #768590;
+  border: 6px solid #fff;
+
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+  -webkit-transform: rotate(4deg);
+  -moz-transform: rotate(4deg);
+  -o-transform: rotate(4deg);
+  -ms-transform: rotate(4deg);
+  transform: rotate(4deg);
+}
+
+/* selection */
+div::selection {
+  background: greenyellow;
+}
