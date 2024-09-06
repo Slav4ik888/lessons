@@ -153,3 +153,8 @@ const isClassNameContains = (selector, className) => {
   const elem = document.querySelector(selector);
   if (elem) elem.remove();
 });
+
+// In Yandex video player
+const $viewerContent = document.querySelector('.Viewer-Content');
+$viewerContent.style.display = 'flex';
+$viewerContent.style.flexDirection = 'column';
