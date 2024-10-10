@@ -1,13 +1,11 @@
-const HTTPS = 'https://ros.bongacams16.com/';
+const HTTPS = 'https://ru3.bongacams14.com/';
 
 const links = [
   "lilcatt",
   "sweetmammy-1",
   "sophieanwhite",
   "fox-lisa",
-  "stasja1",
   "alexedythe",
-  "blue-eyes1",
   "-alenyshka-/",
   "sophiemary",
   "milana-milana",
@@ -21,7 +19,6 @@ const links = [
   "tina85",
   "desirable3",
   "evarose",
-  "ari-zona",
   "ogurezzi",
   "emiliamur",
   "realromanticlove2",
@@ -32,11 +29,15 @@ const links = [
   "bette-rossi",
   "-hennessy-#!/",
   "konfetka00",
-  "sexality",
   "choose-me111",
   "minicooperxxx",
   "tachikaa",
-  "ladyfay"
+  "ladyfay",
+  "kiraroxx",
+  "blackcat142",
+  "youngmilf",
+  "milana555550",
+  "adel-chocolatee",
 ];
 
 

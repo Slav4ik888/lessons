@@ -1,3 +1,20 @@
+
+window.onload = function () {
+  const growth = document.querySelector('.triangle-growth');
+  growth.setAttribute('fill', '#02bf02');
+
+  const fall = document.querySelector('.triangle-fall');
+  fall.setAttribute('fill', '#cc0000');
+
+  const unchangedRight = document.querySelector('.triangle-unchanged-right');
+  unchangedRight.setAttribute('fill', '#434343');
+
+  const unchangedLeft = document.querySelector('.triangle-unchanged-left');
+  unchangedLeft.setAttribute('fill', '#434343');
+};
+
+
+// -----------------------------------------------------------------
 const START_STR = '={';
 const END_STR = '}';
 
