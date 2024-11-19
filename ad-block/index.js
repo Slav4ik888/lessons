@@ -7,7 +7,8 @@ const
   dzen = ['.article-right-ad-block__sticky'],
   xvideos = ['#video-ad', '#ad-footer', '.remove-ads'],
   gitar = ['.ab', '#wrap_6334'],
-  errInGoogleSheet = ['.docs-butterbar-wrap', '.modal-dialog'];
+  errInGoogleSheet = ['.docs-butterbar-wrap', '.modal-dialog'],
+  online_films = ['#vid_vpaut_div', '#movie_video', '#gaeud042717469866987656'];
 
 
 /****************************************************
@@ -61,6 +62,7 @@ const ras = () => {
   rasd(russkiiyazyk);
   rasd(gitar);
   rasd(errInGoogleSheet);
+  rasd(online_films);
   rui();
 };
 
