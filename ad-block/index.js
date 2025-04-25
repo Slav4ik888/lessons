@@ -8,7 +8,7 @@ const
   xvideos = ['#video-ad', '#ad-footer', '.remove-ads'],
   gitar = ['.ab', '#wrap_6334'],
   errInGoogleSheet = ['.docs-butterbar-wrap', '.modal-dialog'],
-  online_films = ['#vid_vpaut_div', '#movie_video', '#gaeud042717469866987656'];
+  online_films = ['#vid_vpaut_div', '#movie_video', '#gaeud042717469866987656', '#Spgbt09128344878918826', '#RkAcV0259283142768975'];
 
 
 /****************************************************
