@@ -30,8 +30,8 @@ const rass = (selectors) => {
  ***************************************************/
 const rui = () => {
   const allA = document.querySelectorAll('a');
-  if (! allA) return;
-  
+  if (!allA) return;
+
   for (const a of allA) {
     if (a.href.includes('ukraine')) a.remove();
   }
@@ -101,8 +101,8 @@ const raf = () => {
  * @param {string} text
  */
 const isTextContent = (selector, text) => {
-  if (! selector) return
-  
+  if (!selector) return
+
   return selector.textContent.includes(text);
 };
 
@@ -112,8 +112,8 @@ const isTextContent = (selector, text) => {
  * @param {string} className
  */
 const isClassNameContains = (selector, className) => {
-  if (! selector) return
-  
+  if (!selector) return
+
   return selector.classList.contains(className);
 };
 
@@ -152,6 +152,12 @@ const isClassNameContains = (selector, className) => {
 
 // HABR
 ['.tm-layout-sidebar__ads', '.tm-layout-sidebar', '.tm-page__sidebar', '.tm-adfox-banner__container'].forEach(selector => {
+  const elem = document.querySelector(selector);
+  if (elem) elem.remove();
+});
+
+// ONLINE
+['#qwerty_wrap', '.adv_block_top', '.lblock', '.undervideoadv'].forEach(selector => {
   const elem = document.querySelector(selector);
   if (elem) elem.remove();
 });
