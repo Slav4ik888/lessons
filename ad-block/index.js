@@ -157,7 +157,7 @@ const isClassNameContains = (selector, className) => {
 });
 
 // ONLINE
-['#qwerty_wrap', '.adv_block_top', '.lblock', '.undervideoadv'].forEach(selector => {
+['#yandex_rtb_R-A-1630021-21-1', '#yandex_rtb_R-A-1630021-18', '#qwerty_wrap', '.adv_block_top', '.lblock', '.undervideoadv'].forEach(selector => {
   const elem = document.querySelector(selector);
   if (elem) elem.remove();
 });
