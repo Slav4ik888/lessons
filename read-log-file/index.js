@@ -10,28 +10,34 @@ const getValue = (strArr, value) => {
 // node . errors.log
 async function readLogFileAsync(filePath) {
   try {
-    let count = 0; // Счетчик подходящих строк
+    let countDemo = 0; // Счетчик подходящих строк
+    let countPartners = 0;
 
     const data = await fs.readFile(filePath, 'utf8');
     const lines = data.split(/\r?\n/);
-    console.log('lines.length: ', lines.length);
+    // console.log('lines.length: ', lines.length);
 
     lines.forEach(str => {
       if (str.trim()) { // Пропускаем пустые строки
-        console.log(str);
 
         const lineArr = str.split(' ');
-        const path = getValue(lineArr, '[r]:');
+        const path = getValue(lineArr, '[r]:'); // /api/increaseFollower
         const ref = getValue(lineArr, '[ref]:');
         const user = getValue(lineArr, '[u]:');
 
         if (ref.includes('demo') && user === 'quest') {
-          count++;
+          if (!['/api/increaseFollower', '/api/getData'].includes(path)) { // Это дублирующие строки
+            console.log(str);
+            countDemo++;
+          }
         }
         else {
-          console.log('------------', ref.includes('demo'), ' -- ', user, user === 'quest');
+          // console.log('------------', ref.includes('demo'), ' -- ', user, user === 'quest');
         }
 
+        if (path === '/api/increaseFollower') {
+          countPartners++;
+        }
         // if (path === '/api/getData') {
         //   if (ref.includes('demo') && user === 'quest') count++;
         //   const ci = getValue(lineArr, '[ci]:');
@@ -43,7 +49,7 @@ async function readLogFileAsync(filePath) {
         // }
       }
     });
-    console.log('count: ', count,);
+    console.log('countDemo: ', countDemo, 'countPartners: ', countPartners);
   }
   catch (err) {
     console.error('Ошибка при чтении файла:', err);
