@@ -9,11 +9,11 @@
     "run_at": "document_end"
   }],
   "permissions": [
-      "storage",
-      "activeTab"
+    "storage",
+    "activeTab"
   ],
   "action": {
-      "default_popup": "popup.html",
-      "default_title": "Настройки фона"
+    "default_popup": "popup.html",
+    "default_title": "Настройки фона"
   }
 }

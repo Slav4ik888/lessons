@@ -3,6 +3,7 @@
 const DEFAULT_IMG_URL = 'https://proza.ru/pics/2021/06/20/847.jpg';
 // 'https://i.pinimg.com/originals/ac/6a/e7/ac6ae7bcb93cc0de3fdcc167db69ba55.jpg';
 
+
 function applyCustomDesign(settings) {
   // Удаляем лишние элементы
   ['.b24-app-block', '.intranet-release-ear', '.menu-license-all-wrapper']
@@ -33,22 +34,20 @@ function applyCustomDesign(settings) {
     'none'
   );
 
-  // Устанавливаем новый фон
-  ['header', '#menu-items-block', '#right-bar']
-    .forEach(selector => {
-      const elem = document.querySelector(selector);
-      if (elem) {
-        elem.style.background = '#00000067';
-      }
-    });
+  // Устанавливаем новый фон барам
+  ['header', '#menu-items-block', '#right-bar'].forEach(selector => {
+    const elem = document.querySelector(selector);
+    if (elem) {
+      elem.style.background = '#00000067';
+    }
+  });
 
-  ['.page__toolbar']
-    .forEach(selector => {
-      const elem = document.querySelector(selector);
-      if (elem) {
-        elem.style.background = '#0000003d';
-      }
-    });
+  ['.page__toolbar'].forEach(selector => {
+    const elem = document.querySelector(selector);
+    if (elem) {
+      elem.style.background = '#0000003d';
+    }
+  });
 }
 
 

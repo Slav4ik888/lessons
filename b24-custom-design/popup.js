@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
   const bgImageInput = document.getElementById('bgImage');
   const bgSizeSelect = document.getElementById('bgSize');
@@ -37,7 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
         showSavedMessage();
         applyToCurrentTab(settings);
       });
-    } else {
+    }
+    else {
       // Альтернативный способ для тестирования
       applyToCurrentTab(settings);
       showSavedMessage();
