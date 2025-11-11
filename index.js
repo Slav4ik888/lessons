@@ -1,1 +1,1 @@
-// git add . && git commit -m "add read-log-file" && git push -u origin master
+// git add . && git commit -m "add bx24-design up" && git push -u origin master

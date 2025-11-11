@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Свой дизайн Б24",
+  "version": "1.4",
+  "description": "Изменяет дизайн сайта с настраиваемым фоном",
+  "content_scripts": [{
+    "matches": ["https://badcom.bitrix24.ru/*"],
+    "js": ["index.js"],
+    "run_at": "document_end"
+  }],
+  "permissions": [
+      "storage",
+      "activeTab"
+  ],
+  "action": {
+      "default_popup": "popup.html",
+      "default_title": "Настройки фона"
+  }
+}
