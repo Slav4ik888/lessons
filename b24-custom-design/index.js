@@ -4,6 +4,30 @@ const DEFAULT_IMG_URL = 'https://proza.ru/pics/2021/06/20/847.jpg';
 // 'https://i.pinimg.com/originals/ac/6a/e7/ac6ae7bcb93cc0de3fdcc167db69ba55.jpg';
 
 
+/** Открыт ли iframe */
+function isIframe() {
+  return window.location.search.includes('IFRAME');
+}
+
+
+/** Выводим картинку фона (отдельной функцией, чтобы фон в iframe не изменялся) */
+function setBackgroundImage(settings) {
+  if (isIframe()) return
+  
+  // Добавляем картинку
+  if (settings && settings.backgroundImage) {
+    document.body.style.backgroundImage = `url(${settings.backgroundImage})`;
+  }
+  else {
+    document.body.style.backgroundImage = `url(${DEFAULT_IMG_URL})`;
+  }
+
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "center";
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundAttachment = "fixed";
+}
+
 
 function applyCustomDesign(settings) {
   // console.log('Применяем кастомный дизайн...', settings);
@@ -20,15 +44,15 @@ function applyCustomDesign(settings) {
 
 
   const elements = document.querySelectorAll('.tasks-kanban-item-title');
-  // if (! elements) return;
+  if (elements) {
+    elements.forEach(elem => {
+      elem.style.maxHeight = '100%';
 
-  elements.forEach(elem => {
-    elem.style.maxHeight = '100%';
+      // Добавляем класс, который скрывает ::after
+      elem.classList.add('no-after');
+    });
+  }
 
-    // Добавляем класс, который скрывает ::after
-    elem.classList.add('no-after');
-  });
-  
   
   // Удаляем лишние элементы
   ['.b24-app-block', '.intranet-release-ear', '.menu-license-all-wrapper']
@@ -37,20 +61,7 @@ function applyCustomDesign(settings) {
       if (elem) elem.remove();
     });
 
-
-  // Добавляем картинку
-  if (settings && settings.backgroundImage) {
-    document.body.style.backgroundImage = `url(${settings.backgroundImage})`;
-  }
-  else {
-    document.body.style.backgroundImage = `url(${DEFAULT_IMG_URL})`;
-  }
-
-  document.body.style.backgroundSize = "cover";
-  document.body.style.backgroundPosition = "center";
-  document.body.style.backgroundRepeat = "no-repeat";
-  document.body.style.backgroundAttachment = "fixed";
-
+  
   // Изменение переменной для всего документа
   document.documentElement.style.setProperty(
     '--air-theme-bg-image-blurred',
@@ -135,6 +146,7 @@ if (typeof chrome !== 'undefined' && chrome.runtime) {
       };
       saveSettings(settings);
       applyCustomDesign(settings);
+      setBackgroundImage(settings);
       sendResponse({ success: true });
     }
   });
@@ -145,6 +157,7 @@ async function init() {
   try {
     const settings = await getSettings();
     applyCustomDesign(settings);
+    setBackgroundImage(settings);
 
     // Слушатель для динамических изменений (SPA)
     const observer = new MutationObserver(async () => {
@@ -164,9 +177,22 @@ async function init() {
 
 
 // Запуск
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
+function onDocumentComplete(callback) {
+  // Слушаем изменения состояния документа
+  document.addEventListener('readystatechange', () => {
+    if (document.readyState === 'complete') {
+      callback();
+    }
+  });
+
+  // Если уже complete
+  if (document.readyState === 'complete') {
+    setTimeout(() => callback(), 0);
+  }
 }
-else {
+
+// Использование
+onDocumentComplete(() => {
+  // console.log('readyState достиг complete');
   init();
-}
+});

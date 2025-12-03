@@ -1,7 +1,7 @@
 {
-  "manifest_version": 4,
+  "manifest_version": 3,
   "name": "Свой дизайн Б24",
-  "version": "1.6",
+  "version": "1.10",
   "description": "Изменяет дизайн сайта с настраиваемым фоном",
   "content_scripts": [{
     "matches": ["https://badcom.bitrix24.ru/*"],
