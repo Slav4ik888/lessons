@@ -4,7 +4,32 @@ const DEFAULT_IMG_URL = 'https://proza.ru/pics/2021/06/20/847.jpg';
 // 'https://i.pinimg.com/originals/ac/6a/e7/ac6ae7bcb93cc0de3fdcc167db69ba55.jpg';
 
 
+
 function applyCustomDesign(settings) {
+  // console.log('Применяем кастомный дизайн...', settings);
+
+  // Сразу добавляем стиль, который скрывает ::after
+  const style = document.createElement('style');
+  style.innerHTML = `
+    .tasks-kanban-item-title.no-after::after {
+      display: none !important;
+      content: none !important;
+    }
+  `;
+  document.head.appendChild(style);
+
+
+  const elements = document.querySelectorAll('.tasks-kanban-item-title');
+  // if (! elements) return;
+
+  elements.forEach(elem => {
+    elem.style.maxHeight = '100%';
+
+    // Добавляем класс, который скрывает ::after
+    elem.classList.add('no-after');
+  });
+  
+  
   // Удаляем лишние элементы
   ['.b24-app-block', '.intranet-release-ear', '.menu-license-all-wrapper']
     .forEach(selector => {
@@ -14,8 +39,6 @@ function applyCustomDesign(settings) {
 
 
   // Добавляем картинку
-  console.log('Применяем кастомный дизайн...', settings);
-
   if (settings && settings.backgroundImage) {
     document.body.style.backgroundImage = `url(${settings.backgroundImage})`;
   }
@@ -48,6 +71,31 @@ function applyCustomDesign(settings) {
       elem.style.background = '#0000003d';
     }
   });
+
+  // Кнопка Добавить задачу проект
+  document.documentElement.style.setProperty(
+    '--ui-color-accent-main-success',
+    '#883122'
+  );
+
+  ['#tasks-buttonAdd', '#projectAddButton'].forEach(selector => {
+    const elem = document.querySelector(selector);
+    if (elem) {
+      elem.style.background = '#883122';
+    }
+  });
+
+  // Кнопка Видеозвонок
+  document.documentElement.style.setProperty(
+    '--ui-color-accent-main-primary',
+    '#8aa0b7'
+  );
+  // ['.ui-btn-main'].forEach(selector => {
+  //   const elem = document.querySelector(selector);
+  //   if (elem) {
+  //     elem.style.background = '#8aa0b7';
+  //   }
+  // });
 }
 
 
